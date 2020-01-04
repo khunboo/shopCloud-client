@@ -1,9 +1,6 @@
 <!--  -->
 <template>
   <div class='login-box'>
-    <el-button class="show-account"
-               type="text"
-               @click="accountTip">提示帐号信息</el-button>
     <el-form :model="ruleForm2"
              :rules="rules2"
              ref="ruleForm2"
@@ -99,15 +96,6 @@ export default {
           return false;
         }
       });
-    },
-    accountTip () {
-      this.$notify({
-        title: '账号：admin',
-        dangerouslyUseHTMLString: true,
-        message: '<strong>密码：<i>123456</i></strong>',
-        type: 'success',
-        position: 'bottom-left'
-      })
     }
 
   },
@@ -118,7 +106,6 @@ export default {
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted () {
-    this.accountTip()
   },
   //生命周期 - 创建之前
   beforeCreate () { },
