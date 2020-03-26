@@ -12,13 +12,14 @@ Vue.use(ElementUI);
 import VCharts from 'v-charts'
 Vue.use(VCharts)
 
-import Mock from './mock'
-Mock.bootstrap();
+//import Mock from './mock'
+//Mock.bootstrap();
 
 // css
 import './assets/css/style.css'
 
 router.beforeEach((to, from, next) => {
+
   if (to.path == '/login') {
     sessionStorage.removeItem('user');
   }

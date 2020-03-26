@@ -1,2 +1,23 @@
 @import './reset.css';
 @import './font-awesome.min.css';
+
+.backimage{
+    background-image: url(../images/top_images/login.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.login-header {
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.login-brand {
+  margin: 0 0 15px;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

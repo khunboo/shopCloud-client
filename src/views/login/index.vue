@@ -1,13 +1,17 @@
 <!--  -->
 <template>
-  <div class='login-box'>
+  <div class='login-box backimage'>
+    <div class="login-header">
+      <h3 class="login-brand"
+          style="font-size:34px;color:#56a4f1">澳洲代购管理平台</h3>
+    </div>
     <el-form :model="ruleForm2"
              :rules="rules2"
              ref="ruleForm2"
              label-position="left"
              label-width="70px"
              class="demo-ruleForm login-container">
-      <h3 class="title">系统登录</h3>
+      <h3 class="title">登录</h3>
       <el-form-item prop="account"
                     label="账号">
         <el-input type="text"
@@ -77,22 +81,17 @@ export default {
       this.$refs.ruleForm2.validate((valid) => {
         if (valid) {
           this.logining = true;
-          var loginParams = { username: this.ruleForm2.account, password: this.ruleForm2.checkPass };
-          requestLogin(loginParams).then(data => {
-            this.logining = false;
-            let { msg, code, user } = data;
-            if (code !== 200) {
-              this.$message({
-                message: msg,
-                type: 'error'
-              });
+          var loginParams = { account: this.ruleForm2.account, password: this.ruleForm2.checkPass };
+          requestLogin(loginParams).then(({data:data}) => {
+            if (data.code !== 200) {
+              this.logining = false;
+              return this.$message.error(data.msg);
             } else {
-              sessionStorage.setItem('user', JSON.stringify(user));
+              sessionStorage.setItem('user', data.code);
               this.$router.push({ path: '/' });
             }
           });
         } else {
-          console.log('error submit!!');
           return false;
         }
       });

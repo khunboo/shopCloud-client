@@ -1,9 +1,11 @@
 import axios from 'axios';
 
-let base = '';
+let base = 'http://localhost:9300/shop/admin';
 
 export const requestLogin = params => {
-  return axios.post(`${base}/login`, params).then(res => res.data);
+  return axios.get(`${base}/user/login`, {
+    params: params
+  });
 };
 
 export const getUserListPage = params => {

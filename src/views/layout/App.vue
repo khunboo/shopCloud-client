@@ -51,9 +51,6 @@
             <i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
-						<a target='_blank' href="https://gitee.com/zpt360/element-admin.git">
-						  <el-dropdown-item><i class="fa fa-cog"></i>码云地址</el-dropdown-item>
-						</a>
             <el-dropdown-item @click.native="logout"><i class="fa fa-key"></i> 退出系统</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
