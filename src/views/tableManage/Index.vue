@@ -205,7 +205,7 @@ export default {
     },
     // 获取用户列表
     getUsers: function () {
-      this.loading = true;
+      this.loading = false;
       let para = {
         page: this.page,
         name: this.filters.name

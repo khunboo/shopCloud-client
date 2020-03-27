@@ -2,7 +2,7 @@
 <template>
   <div class='app-container'>
     <div class="item">
-      <h4>数据展示</h4>
+      <h4>销售数据展示</h4>
       <data-display :option="option"></data-display>
     </div>
     <div class="item">
@@ -29,26 +29,26 @@ export default {
         color: '#15A0FF',
         data: [
           {
-            count: 1000,
-            title: '日活跃数'
+            count: 500,
+            title: '日销量数'
           },
           {
-            count: 3000,
-            title: '月活跃数'
+            count: 1000,
+            title: '月销量数'
           },
           {
             count: 20000,
-            title: '年活跃数'
+            title: '年销量数'
           }
         ]
       },
       easyDataOption: {
         span: 6,
         data: [
-          {            title: '分类统计',
+          { title: '分类统计',
             subtitle: '实时',
-            count: 7993,
-            allcount: 10222,
+            count: 1000,
+            allcount: 2000,
             text: '当前分类总记录数',
             color: 'rgb(49, 180, 141)',
             key: '类'
@@ -56,8 +56,8 @@ export default {
           {
             title: '附件统计',
             subtitle: '实时',
-            count: 3112,
-            allcount: 10222,
+            count: 1000,
+            allcount: 2000,
             text: '当前上传的附件数',
             color: 'rgb(56, 161, 242)',
             key: '附'
@@ -65,8 +65,8 @@ export default {
           {
             title: '文章统计',
             subtitle: '实时',
-            count: 908,
-            allcount: 10222,
+            count: 1000,
+            allcount: 2000,
             text: '评论次数',
             color: 'rgb(117, 56, 199)',
             key: '评'
@@ -74,8 +74,8 @@ export default {
           {
             title: '新闻统计',
             subtitle: '实时',
-            count: 908,
-            allcount: 10222,
+            count: 1000,
+            allcount: 2000,
             text: '评论次数',
             color: 'rgb(59, 103, 164)',
             key: '新'

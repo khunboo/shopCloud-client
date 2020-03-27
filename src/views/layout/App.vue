@@ -4,7 +4,7 @@
     <!-- B 顶部菜单 -->
     <div class="header">
       <div class="logo">
-        <span class="big">Element Admin</span>
+        <span class="big">澳代小屋</span>
         <span class="min">
           <img src="../../assets/images/logo.svg">
         </span>
@@ -69,7 +69,8 @@
                    :default-active="$route.path">
             <template v-for="(menu_v,menu_k) in menu">
               <el-submenu v-if="menu_v.children"
-                          :index="menu_k">
+                          :index="menu_k"
+                          :key="menu_k">
                 <template slot="title">
                   <i :class="menu_v.icon"></i>
                   <span>{{menu_v.name}}</span>
@@ -84,7 +85,8 @@
               </el-submenu>
 
               <el-menu-item v-else
-                            :index="menu_v.path">
+                            :index="menu_v.path"
+                            :key="menu_v.path">
                 <i :class="menu_v.icon"></i>
                 <span>{{menu_v.name}}</span>
               </el-menu-item>
@@ -239,6 +241,8 @@ export default {
 }
 .header .logo .big {
   display: block;
+  font-size: 20px;
+  font-weight: 800;
 }
 .header .logo .min {
   display: none;
