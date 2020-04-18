@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [{
       path: '/login',
       component: resolve => require(['@/views/login/index.vue'], resolve),
@@ -70,25 +71,23 @@ export default new Router({
           component: resolve => require(['@/views/map/Baidu.vue'], resolve),
         },
         {
-          path: '/table_manage',
-          name: 'Table',
+          path: '/product_manage',
+          name: 'product',
           meta: {
-            title: '表格',
+            title: '商品列表管理',
             keepAlive: false
           },
-          component: resolve => require(['@/views/tableManage/Index.vue'], resolve),
+          component: resolve => require(['@/views/tableManage/tableManage.vue'], resolve),
         },
-        /* 
-                {
-                  path: '/user_manage',
-                  name: 'UserManage',
-                  meta: {
-                    title: '用户列表',
-                    keepAlive: true
-                  },
-                  component: resolve => require(['@/views/userManage/Index.vue'], resolve),
-                },
-                 */
+        {
+          path: '/product_member',
+          name: 'member',
+          meta: {
+            title: '商品购买管理',
+            keepAlive: false
+          },
+          component: resolve => require(['@/views/userManage/userManage.vue'], resolve),
+        }
 
       ]
     }

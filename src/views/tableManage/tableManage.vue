@@ -5,9 +5,9 @@
     <div>
       <el-form :inline="true"
                :model="filters">
-        <el-form-item label="姓名">
+        <el-form-item label="商品名称">
           <el-input v-model="filters.name"
-                    placeholder="姓名"></el-input>
+                    placeholder="商品名称"></el-input>
         </el-form-item>
 
         <el-form-item>
@@ -35,38 +35,43 @@
                        width="55">
       </el-table-column>
 
-      <el-table-column type="index"
-                       prop="id"
-                       label="ID"
-                       width="60">
-      </el-table-column>
-
       <el-table-column prop="name"
-                       label="姓名"
+                       label="销售种类"
                        width="120">
 
       </el-table-column>
 
       <el-table-column prop="sex"
-                       label="性别"
+                       label="销售品牌"
                        width="120"
                        :formatter="formatSex">
       </el-table-column>
 
       <el-table-column prop="age"
-                       label="年龄"
+                       label="销售产品"
                        width="120">
       </el-table-column>
 
       <el-table-column prop="birth"
-                       label="生日"
+                       label="价格"
                        width="120">
       </el-table-column>
 
       <el-table-column prop="addr"
-                       label="地址"
+                       label="数量"
                        min-width="160">
       </el-table-column>
+
+      <el-table-column prop="createUser"
+                       label="创建人员"
+                       min-width="160">
+      </el-table-column>
+
+      <el-table-column prop="createTime"
+                       label="创建时间"
+                       min-width="160">
+      </el-table-column>
+      
       <el-table-column label="操作"
                        width="200">
         <template slot-scope="scope">

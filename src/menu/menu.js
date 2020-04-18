@@ -74,10 +74,17 @@ menu.content_manage = {
   children: {}
 }
 let ContentManage = menu.content_manage.children;
-ContentManage.post = {
-  name: '购买商品管理',
-  path: '/table_manage',
+ContentManage.manage = {
+  name: '商品列表管理',
+  path: '/product_manage'
+};
+
+ContentManage.member = {
+  name: '商品购买管理',
+  path: '/product_member'
 }
+
+
 
 /**
  * 用户管理
