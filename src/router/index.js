@@ -87,6 +87,16 @@ export default new Router({
             keepAlive: false
           },
           component: resolve => require(['@/views/userManage/userManage.vue'], resolve),
+        },
+
+        {
+          path: '/work_hours',
+          name: 'hours',
+          meta: {
+            title: '琴行工时管理',
+            keepAlive: false
+          },
+          component: resolve => require(['@/views/workhours/workhours.vue'], resolve),
         }
 
       ]

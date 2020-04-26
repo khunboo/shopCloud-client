@@ -84,6 +84,17 @@ ContentManage.member = {
   path: '/product_member'
 }
 
+menu.workhours = {
+  name: '琴行工时管理',
+  icon: 'fa fa-file-text-o',
+  children: {}
+}
+let listInfo = menu.workhours.children;
+listInfo.work = {
+  name: '琴行工时管理',
+  path: '/work_hours'
+}
+
 
 
 /**

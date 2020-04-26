@@ -37,3 +37,9 @@ export const addUser = params => {
     params: params
   });
 };
+
+export const getSelectByNameList = params => {
+    return axios.get(`${base}/workhours/list`, {
+      params: params
+    });
+};
