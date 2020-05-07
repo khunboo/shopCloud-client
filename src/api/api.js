@@ -38,6 +38,10 @@ export const addUser = params => {
   });
 };
 
+export const addName = params => {
+  return axios.post(`${base}/workhours/save`, params);
+};
+
 export const getSelectByNameList = params => {
     return axios.get(`${base}/workhours/list`, {
       params: params
