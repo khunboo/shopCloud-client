@@ -47,3 +47,9 @@ export const getSelectByNameList = params => {
       params: params
     });
 };
+
+export const delName = params => {
+    return axios.get(`${base}/workhours/delName`, {
+        params: params
+    });
+};

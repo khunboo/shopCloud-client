@@ -15,8 +15,12 @@
         <el-button type="primary"
                    @click="AddWorkHours">新增</el-button>
       </el-form-item>
+      <el-form-item>
+        <el-button type="primary"
+                   @click="deleteInfo">删除</el-button>
+      </el-form-item>
 
-          <el-table ref="workhousrsTable"
+      <el-table ref="workhousrsTable"
               border
               :data="workhours"
               style="width: 100%"
@@ -71,7 +75,7 @@
     </div>
 
     <el-dialog :title="textMap[dialogStatus]"
-               :visible.sync="dialogVisible">
+               :visible.sync="dialogVisible" center>
 
       <el-form :model="editForm"
                 label-width="80px"
@@ -120,7 +124,7 @@
 
 <script>
 
-import {getSelectByNameList, addName} from "../../api/api.js";
+import {getSelectByNameList, addName, delName} from "../../api/api.js";
 
 export default {
   data () {
@@ -135,6 +139,7 @@ export default {
         unitname: ''
       },
       editForm: {
+        id: '',
         unitname: '',
         workCount: 0,
         memberCount: 0,
@@ -154,6 +159,10 @@ export default {
         update: "编辑信息",
         create: "新增信息"
       },
+      delVisible: false,
+      delselection: "",
+      delarr: [],
+      deltitle: "提示"
     };
   },
 
@@ -171,7 +180,7 @@ export default {
 
   methods: {
     selsChange(val) {
-        this.sels = val;
+      this.delselection = val;
     },
 
     handleCurrentChange (val) {
@@ -205,6 +214,37 @@ export default {
           workTime: ''
       }
     },
+
+    deleteInfo() {
+      if(this.delselection.length == 0){
+        return this.$message({
+            message: "请选择需要删除的数据！！！",
+            type: 'warning',
+            duration: 2000
+        })
+      }
+      
+      this.$confirm("确定进行【删除】操作？", "提示", {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        let param = this.delselection.id;
+        delName(param).then(res => {
+            this.$message({
+              type: 'success',
+              message: '删除成功'
+            })
+        }).catch(() => {
+            this.$message.err("删除失败")
+      }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '取消删除'
+          })
+      })
+    })
+  }, 
 
     createData() {
       this.$refs.editForm.validate(valid => {
